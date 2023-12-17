@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+    <style>
+       
+            /* position: relative; */
+            /* left:100px; *{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+background-color:rgb(230, 222, 222) ;
+font-family:sans-serif;
+outline:none;
+}
+.container {
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            display: grid;
+            grid-template-columns: repeat(4,50px);
+            
+    
+        }
+        #display {
+            width: 205px;
+            height:50px;
+        
+            position:relative;
+            left:100px
+        }
+
+        h2{
+            position:relative;
+            left:110px;
+            top:20px;
+        }
+         */
+        
+        input[type="button"] {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            box-shadow: inset 5px 5px 12px,
+                        5px 5px 12px;
+            border-radius: 16px;    
+            background-color: aliceblue;        
+        }
+
+        #display {
+            width: 205px;
+            height:50px;
+        
+            position:relative;
+            left:none;
+            text-align: end;
+            box-shadow: inset 5px 5px 12px,
+                        5px 5px 12px;
+            border-radius: 16px; 
+            font-size: 50px;
+        }
+        
+        .container {
+    height:100vh;
+    /* display:flex; */
+    justify-content: center;
+    align-items: center;
+}
+#equal{
+    width: 155px;
+}
+    </style>
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h2>Simple Calculator</h2>
+    <input type="text" id="display" placeholder = 0 readonly>
+    <br>
+    <input type="button" value="1" onclick="appendValue('1')">
+    <input type="button" value="2" onclick="appendValue('2')">
+    <input type="button" value="3" onclick="appendValue('3')">
+    <input type="button" value="+" onclick="appendValue('+')">
+    <br>
+    <input type="button" value="4" onclick="appendValue('4')">
+    <input type="button" value="5" onclick="appendValue('5')">
+    <input type="button" value="6" onclick="appendValue('6')">
+    <input type="button" value="-" onclick="appendValue('-')">
+    <br>
+    <input type="button" value="7" onclick="appendValue('7')">
+    <input type="button" value="8" onclick="appendValue('8')">
+    <input type="button" value="9" onclick="appendValue('9')">
+    <input type="button" value="*" onclick="appendValue('*')">
+    <br>
+    <input type="button" value="0" onclick="appendValue('0')">
+    <input type="button" value="." onclick="appendValue('.')">
+    <input type="button" value="/" onclick="appendValue('/')">
+    <input type="button" value="%" onclick="appendValue('%')">
+    <br>
+
+    <input type="button" value="C" onclick="clearDisplay()">
+    
+    <input type="button" value="=" id="equal"     onclick="calculate()">
+    
+    <script>
+        function appendValue(value) {
+            document.getElementById('display').value += value;
+        }
+
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                const result = eval(document.getElementById('display').value);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'Error';
+            }
+        }
+    
+
+    </script>
+    </div>
+</body>
+</html>
